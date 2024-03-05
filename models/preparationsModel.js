@@ -38,6 +38,7 @@ const addSchema = Joi.object({
     quantity: Joi.number().required(),
     photo: Joi.string(),
     details: Joi.string(),
+  
 });
 
  const schemas = { addSchema };

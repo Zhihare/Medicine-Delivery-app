@@ -1,6 +1,6 @@
 
 const { Pharmacy } = require('../../models');
-const { validateID } = require('../../service/waterServices/uuidValid');
+const { validateID } = require('../../service/orderServices/uuidValid');
 
 
 const removePharmacy = async (req, res) => {

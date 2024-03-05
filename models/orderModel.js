@@ -34,13 +34,23 @@ const orderSchema = new Schema(
 
 orderSchema.post('save', handleMongooseError);
 
-const emailSchema = Joi.object({
+const addSchema = Joi.object({
 	email: Joi.string().pattern(emailReg).required(),
+	phone: Joi.string().min(7).max(20).required(),
+	name: Joi.string().required(),
+	adress: Joi.string().required(),
+	order: Joi.array(),
 });
+
+const getOrdersSchema = Joi.object({
+	email: Joi.string().pattern(emailReg).required(),
+	name: Joi.string().required()
+})
 
 
 const schemas = {
-	emailSchema,
+	addSchema,
+	getOrdersSchema,
 };
 
 const Order = model('order', orderSchema);

@@ -5,11 +5,10 @@ const cors = require('cors');
 
 require('dotenv').config({ path: './envs/.env' });
 
-const authRouter = require('./routes/api/users');
-const watersRouter = require('./routes/api/water');
 
 const pharmacyRouter = require('./routes/api/pharmacy');
 const preparationsRouter = require('./routes/api/preparations');
+const orderRouter = require('./routes/api/order')
 
 const app = express();
 
@@ -22,11 +21,9 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-app.use('/users', authRouter);
-app.use('/user/water', watersRouter);
-
 app.use('/pharmacys', pharmacyRouter);
 app.use('/pharmacy', preparationsRouter);
+app.use('/orders', orderRouter);
 
 app.use((req, res) => {
 	res.status(404).json({ message: 'Not found' });

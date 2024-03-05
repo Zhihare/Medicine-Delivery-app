@@ -10,12 +10,5 @@ exports.isValidId = (req, res, next) => {
 	next();
 };
 
-exports.isValidTodayID = (req, res, next) => {
-	const { todayID } = req.params;
-	if (!isValidObjectId(todayID)) {
-		next(HttpError(404, `${todayID} is not a valid id`));
-	}
-	next();
-};
 
 

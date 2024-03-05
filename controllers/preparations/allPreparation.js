@@ -7,11 +7,11 @@ const allPreparation = async (req, res) => {
     const {ID} = req.params;
 
     const pharmacy = await Pharmacy.findById(ID);
-    console.log(pharmacy);
+
     if(!pharmacy) throw HttpError(400);
 
 	const preparation = await Preparations.find({owner: ID });
-console.log(preparation);
+
 	if (!preparation) throw new HttpError(404);
 	
 
