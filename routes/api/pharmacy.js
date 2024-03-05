@@ -12,7 +12,7 @@ router.delete('/:ID', isValidId, ctrl.removePharmacy);
 // router.put('/:todayID', authenticate, validBody(schemas.addSchema), isValidTodayID, validBody(schemas.addSchema), ctrl.editWater);
 
 router.get('/all', ctrl.allPharmacy);
-// router.get('/month', authenticate, ctrl.month);
+
 
 
 module.exports = router;

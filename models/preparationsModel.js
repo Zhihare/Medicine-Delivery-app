@@ -5,7 +5,7 @@ const { handleMongooseError } = require('../helpers');
 
 const preparationsSchema = new Schema(
 	{
-		Name: {
+		name: {
 			type: String,
 		},
 		price: {
@@ -17,7 +17,7 @@ const preparationsSchema = new Schema(
         photo:{
             type: String,
         },
-        deteils:{
+        details:{
             type: String,
         },
 		 owner: {
@@ -33,11 +33,11 @@ const preparationsSchema = new Schema(
 preparationsSchema.post('save', handleMongooseError);
 
 const addSchema = Joi.object({
-	Name: Joi.string().required(),
+	name: Joi.string().required(),
 	price: Joi.number().required(),
     quantity: Joi.number().required(),
     photo: Joi.string(),
-    deteils: Joi.string(),
+    details: Joi.string(),
 });
 
  const schemas = { addSchema };

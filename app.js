@@ -9,6 +9,7 @@ const authRouter = require('./routes/api/users');
 const watersRouter = require('./routes/api/water');
 
 const pharmacyRouter = require('./routes/api/pharmacy');
+const preparationsRouter = require('./routes/api/preparations');
 
 const app = express();
 
@@ -24,7 +25,8 @@ app.use(express.static('public'));
 app.use('/users', authRouter);
 app.use('/user/water', watersRouter);
 
-app.use('/pharmacy', pharmacyRouter);
+app.use('/pharmacys', pharmacyRouter);
+app.use('/pharmacy', preparationsRouter);
 
 app.use((req, res) => {
 	res.status(404).json({ message: 'Not found' });

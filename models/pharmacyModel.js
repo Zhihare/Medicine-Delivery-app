@@ -14,11 +14,6 @@ const pharmacySchema = new Schema(
 		logo:{
 			type: String,
 		}
-		// owner: {
-		// 	type: Schema.Types.ObjectId,
-		// 	ref: 'users',
-		// 	required: true,
-		// },
 	},
 
 	{ versionKey: false, timestamps: true }

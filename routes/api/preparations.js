@@ -5,13 +5,13 @@ const ctrl = require('../../controllers');
 const router = express.Router();
 
 const { schemas } = require('../../models/preparationsModel');
-const { validBody, isValidTodayID, authenticate } = require('../../middlewares');
+const { validBody, isValidTodayID, authenticate, isValidId } = require('../../middlewares');
 
-router.post('/', authenticate, validBody(schemas.addSchema), ctrl.addWater);
-router.delete('/:todayID', authenticate, isValidTodayID, ctrl.removeWater);
-router.put('/:todayID', authenticate, validBody(schemas.addSchema), isValidTodayID, validBody(schemas.addSchema), ctrl.editWater);
+router.post('/:ID', isValidId, validBody(schemas.addSchema), ctrl.addPreparation);
+router.delete('/:ID', isValidId, ctrl.removePreparation);
+// router.put('/:todayID', authenticate, validBody(schemas.addSchema), isValidTodayID, validBody(schemas.addSchema), ctrl.editWater);
 
-router.get('/today', authenticate, ctrl.today);
+router.get('/:ID', isValidId, ctrl.allPreparation);
 router.get('/month', authenticate, ctrl.month);
 
 
