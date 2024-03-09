@@ -12,6 +12,7 @@ router.delete('/:ID', isValidId, ctrl.removePreparation);
 // router.put('/:todayID', authenticate, validBody(schemas.addSchema), isValidTodayID, validBody(schemas.addSchema), ctrl.editWater);
 
 router.get('/:ID', isValidId, ctrl.allPreparation);
+router.get('/one/:ID', isValidId, ctrl.onePreparation)
 
 
 

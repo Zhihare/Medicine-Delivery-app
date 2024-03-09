@@ -13,6 +13,8 @@ const allPreparation = require('./preparations/allPreparation');
 const addOrder = require('./order/addOrder');
 const getAllOrder = require('./order/getAllOrder');
 
+const onePreparation = require('./preparations/onePreparation');
+
 
 module.exports = {
 
@@ -25,6 +27,7 @@ module.exports = {
 	editPreparation: ctrlWrapper(editPreparation),
 	removePreparation: ctrlWrapper(removePreparation),
 	allPreparation: ctrlWrapper(allPreparation),
+	onePreparation: ctrlWrapper(onePreparation),
 
 	addOrder: ctrlWrapper(addOrder),
 	getAllOrder: ctrlWrapper(getAllOrder),
