@@ -44,7 +44,7 @@ const addSchema = Joi.object({
 
 const getOrdersSchema = Joi.object({
 	email: Joi.string().pattern(emailReg).required(),
-	name: Joi.string().required()
+	phone: Joi.string().required()
 })
 
 
