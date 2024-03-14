@@ -11,7 +11,7 @@ router.post('/',validBody(schemas.addSchema),   ctrl.addOrder);
 // router.delete('/:todayID', authenticate, isValidTodayID, ctrl.removeWater);
 // router.put('/:todayID', authenticate, validBody(schemas.addSchema), isValidTodayID, validBody(schemas.addSchema), ctrl.editWater);
 
-router.get('/', validBody(schemas.getOrdersSchema), ctrl.getAllOrder);
+router.post('/user', validBody(schemas.getOrdersSchema), ctrl.getAllOrder);
 // router.get('/month', authenticate, ctrl.month);
 
 
